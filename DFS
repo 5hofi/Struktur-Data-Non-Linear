@@ -1,0 +1,17 @@
+grafh = {
+    "A":["B","C"],
+    "B":["D"],
+    "C":["D"],
+    "D":[]
+}
+def dfs(grafh, node, visited=None):
+    if visited is None:
+        visited = set()
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+    for neighbor in grafh[node]:
+        dfs(grafh, neighbor, visited)
+# jalankan DFS
+print("Hasil DFS: ")
+dfs(grafh,"A")
