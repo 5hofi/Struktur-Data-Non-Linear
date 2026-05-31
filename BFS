@@ -1,0 +1,20 @@
+from collections import deque
+grafh = {
+    "A":["B","C"],
+    "B":["D"],
+    "C":["D"],
+    "D":[]
+}
+def bfs(grafh, start):
+    queue = deque([start])
+    visited = set()
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            print(node, end=" ")
+            visited.add(node)
+            for neighbor in grafh[node]:
+                queue.append(neighbor)
+# jalankan BFS
+print("Hasil BFS: ")
+bfs(grafh,"A")
