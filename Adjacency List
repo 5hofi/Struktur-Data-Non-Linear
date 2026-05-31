@@ -1,0 +1,9 @@
+grafh = {
+    "A":["B","C"],
+    "B":["D"],
+    "C":["D"],
+    "D":[]
+}
+print("Adjacency List: ")
+for node in grafh:
+    print(node,"->", grafh[node])
